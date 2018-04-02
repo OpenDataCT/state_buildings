@@ -45,7 +45,7 @@
     var geoJsonLayer = L.geoJson(data, {
       pointToLayer: function( feature, latlng) {
         var marker = L.marker(latlng);
-        marker.bindPopup(feature.properties.blms_dba); // replace last term with property data labels to display from GeoJSON file
+        marker.bindPopup(feature.properties.structure_name); // replace last term with property data labels to display from GeoJSON file
         return marker;
       }
     }).addTo(map);
