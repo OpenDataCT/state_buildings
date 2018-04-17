@@ -41,11 +41,11 @@
   // load open data from Socrata endpoint in GeoJSON format
   // register your own Socrata app token at https://dev.socrata.com/register
   // Food Establishments, City of Hartford Open Data https://data.hartford.gov/resource/daux-ukcc
-  $.getJSON("https://data.ct.gov/resource/irb6-3cj4.geojson?$$app_token=hPsaLuvgTQGCVlhPSExmEok3x", function (data){
+  $.getJSON("https://data.ct.gov/resource/uem2-db2e.geojson?$$app_token=hPsaLuvgTQGCVlhPSExmEok3x", function (data){
     var geoJsonLayer = L.geoJson(data, {
       pointToLayer: function( feature, latlng) {
         var marker = L.marker(latlng);
-        marker.bindPopup(feature.properties.structure_name); // replace last term with property data labels to display from GeoJSON file
+        marker.bindPopup(feature.properties.location_name); // replace last term with property data labels to display from GeoJSON file
         return marker;
       }
     }).addTo(map);
